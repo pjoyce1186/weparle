@@ -1,2 +1,2 @@
 # weparle
-A web app for learning vocabulary and conversations
+A web app for learning vocabulary and conversations .
