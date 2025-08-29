@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
-// thanks to tsconfig "paths", @/ works; if it doesn't, use ../../lib/supabaseClient
-import { supabase } from "@/lib/supabaseClient";
+import { supabase } from "../../lib/supabaseClient"; // relative path avoids alias issues
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
@@ -17,7 +16,7 @@ export default function SignIn() {
   }
 
   return (
-    <main>
+    <main style={{ minHeight: "100vh", display: "grid", placeItems: "center", background: "var(--bg)" }}>
       <div className="card" style={{ maxWidth: 420 }}>
         <h2 className="title">Sign in</h2>
         <p style={{ marginTop: 6 }}>We’ll email you a one-time magic link.</p>
