@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+// thanks to tsconfig "paths", @/ works; if it doesn't, use ../../lib/supabaseClient
 import { supabase } from "@/lib/supabaseClient";
 
 export default function SignIn() {
@@ -7,7 +8,7 @@ export default function SignIn() {
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
 
-  async function handleSubmit(e) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError("");
     const { error } = await supabase.auth.signInWithOtp({ email });
@@ -16,7 +17,7 @@ export default function SignIn() {
   }
 
   return (
-    <main style={{ minHeight: "100vh", display: "grid", placeItems: "center", background: "var(--bg)" }}>
+    <main>
       <div className="card" style={{ maxWidth: 420 }}>
         <h2 className="title">Sign in</h2>
         <p style={{ marginTop: 6 }}>We’ll email you a one-time magic link.</p>
