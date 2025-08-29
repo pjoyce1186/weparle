@@ -8,7 +8,7 @@ export default function SignIn() {
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e) {
     e.preventDefault();
     setError("");
     const { error } = await supabase.auth.signInWithOtp({ email });
