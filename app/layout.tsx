@@ -1,10 +1,9 @@
 export const metadata = { title: "WeParlé" };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+     <html lang="en">
       <head>
-        {/* PWA manifest (Step 2 will add this file) */}
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#1D3557" />
       </head>
